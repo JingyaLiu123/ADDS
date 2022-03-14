@@ -1,13 +1,17 @@
-#ifndef COMPUTER_H
-#define COMPUTER_H
 #include <iostream>
+#include "Human.h"
 
-class Computer
+Human::Human()
 {
-    public:
-        Computer();
-        char getMove();
-    private:
-        char Move;
-};
-#endif
+    humanMove = 'a';
+}
+char Human::makeMove(){
+    std::cout << "Enter move: ";
+    std::cin >> humanMove;
+    return humanMove;
+}
+char Human::getMove()
+{
+    return humanMove;
+}
+Human::~Human(){}
