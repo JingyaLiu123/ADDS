@@ -5,15 +5,16 @@ using namespace std;
 
 Human::Human()
 {
-    hMove = 'humanmove';
+    humanMove = 'a';
 }
 char Human::makeMove(){
     cout << "Enter move: ";
-    do { cin >> hMove;}
-    while (hMove != 'S' && hMove != 'R' && hMove != 'P');
-    return hMove;
+    cin >> humanMove;
+    //while (humanMove != 'S' && humanMove != 'R' && humanMove != 'P');
+    return humanMove;
 }
 char Human::getMove()
 {
-    return hMove;
+    return humanMove;
 }
+
