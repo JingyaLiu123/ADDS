@@ -1,19 +1,15 @@
+#include "Computer.h"
 #include <iostream>
 using namespace std;
-#include <string>
-#include "Human.h"
 
-Human::Human()
+Computer::Computer()
 {
-    humanMove = 'a';
+    Move = 'R';
 }
-char Human::makeMove(){
-    cout << "Enter move: ";
-    cin >> humanMove;
-    //while (humanMove != 'S' && humanMove != 'R' && humanMove != 'P');
-    return humanMove;
-}
-char Human::getMove()
-{
-    return humanMove;
+/*char Computer::makeMove(char M){
+    Move = M;
+    M = 'R';
+}*/
+char Computer::getMove(){
+    return Move;
 }
