@@ -16,10 +16,10 @@ char Referee::refGame(Human playerH, Computer playerC)
         Result = 'T';
         cout << "T" << endl;
     } else if (Human_move == 'P'){
-        Result == 'W';
+        Result = 'W';
         cout << "W" << endl;
     } else if (Human_move == 'S'){
-        Result == 'L';
+        Result = 'L';
         cout << "L" << endl;
     }
     return 0;
