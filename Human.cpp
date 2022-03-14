@@ -5,10 +5,7 @@ using namespace std;
 
 Human::Human()
 {
-    /*cout << "Hi I'm Human" << endl;
-    char HumanMove;
-    HumanMove = getHumanMove();*/
-    hMove = 'a';
+    hMove = 'humanmove';
 }
 char Human::makeMove(){
     cout << "Enter move: ";
