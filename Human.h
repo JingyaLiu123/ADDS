@@ -12,7 +12,7 @@ class Human
         char getMove();
 
     private:
-        char hMove;
+        char humanMove;
 };
 
 #endif
