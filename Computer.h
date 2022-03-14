@@ -7,6 +7,7 @@ class Computer
     public:
         Computer();
         char getMove();
+        ~Computer();
     private:
         char Move;
 };
