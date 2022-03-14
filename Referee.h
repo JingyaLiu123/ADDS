@@ -10,7 +10,7 @@ class Referee
 {
     public:
         Referee();
-        char refGame(Human playerH, Computer playerC);
+        char refGame(Human player1, Computer player2);
     private:
         char Result;
         char Human_move;
