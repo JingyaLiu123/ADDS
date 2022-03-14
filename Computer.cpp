@@ -1,17 +1,12 @@
+#include "Computer.h"
 #include <iostream>
-#include "Human.h"
 
-Human::Human()
+Computer::Computer()
 {
-    humanMove = 'a';
+    Move = 'R';
 }
-char Human::makeMove(){
-    std::cout << "Enter move: ";
-    std::cin >> humanMove;
-    return humanMove;
+
+char Computer::getMove(){
+    return Move;
 }
-char Human::getMove()
-{
-    return humanMove;
-}
-Human::~Human(){}
+Computer::~Computer(){}
