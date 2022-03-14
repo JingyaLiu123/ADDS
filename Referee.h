@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include "Human.h"
 #include "Computer.h"
-using namespace std;
 
 class Referee
 {
