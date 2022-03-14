@@ -8,10 +8,10 @@ Referee::Referee()
 {
     Result = 'a';
 }
-char Referee::refGame(Human playerH, Computer playerC)
+char Referee::refGame(Human player1, Computer player2)
 {
-    Human_move = playerH.getMove();
-    Computer_move = playerC.getMove();
+    Human_move = player1.getMove();
+    Computer_move = player2.getMove();
     if (Human_move == Computer_move){
         Result = 'T';
         cout << "T" << endl;
