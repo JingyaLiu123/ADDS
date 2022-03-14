@@ -6,20 +6,23 @@ using namespace std;
 
 Referee::Referee()
 {
-    //Result = 'a';
-    cout << Result << endl;
+    Result = 'a';
 }
-
-char Referee::refGame(Human player1, Computer player2)
+char Referee::refGame(Human playerH, Computer playerC)
 {
-    Human_move = player1.makeMove();
-    Computer_move = player2.getMove();
+    Human_move = playerH.getMove();
+    Computer_move = playerC.getMove();
     if (Human_move == Computer_move){
         Result = 'T';
+        cout << "T" << endl;
     } else if (Human_move == 'P'){
         Result == 'W';
+        cout << "W" << endl;
     } else if (Human_move == 'S'){
         Result == 'L';
+        cout << "L" << endl;
     }
-    return Result;
+    return 0;
 }
+
+
