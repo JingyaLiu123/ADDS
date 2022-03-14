@@ -1,11 +1,13 @@
-#include "Computer.h"
+#ifndef COMPUTER_H
+#define COMPUTER_H
 #include <iostream>
 
-Computer::Computer()
+class Computer
 {
-    Move = 'R';
-}
-
-char Computer::getMove(){
-    return Move;
-}
+    public:
+        Computer();
+        char getMove();
+    private:
+        char Move;
+};
+#endif
