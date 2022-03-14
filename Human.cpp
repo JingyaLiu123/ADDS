@@ -12,7 +12,8 @@ Human::Human()
 }
 char Human::makeMove(){
     cout << "Enter move: ";
-    cin >> hMove;
+    do { cin >> hMove;}
+    while (hMove != 'S' && hMove != 'R' && hMove != 'P');
     return hMove;
 }
 char Human::getMove()
