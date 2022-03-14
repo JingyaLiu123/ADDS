@@ -6,8 +6,8 @@ using namespace std;
 
 Referee::Referee()
 {
-    Result = 'a';
-    //cout << Result << endl;
+    //Result = 'a';
+    cout << Result << endl;
 }
 
 char Referee::refGame(Human player1, Computer player2)
