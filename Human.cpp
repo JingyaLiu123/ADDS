@@ -1,6 +1,4 @@
 #include <iostream>
-using namespace std;
-#include <string>
 #include "Human.h"
 
 Human::Human()
@@ -8,9 +6,8 @@ Human::Human()
     humanMove = 'a';
 }
 char Human::makeMove(){
-    cout << "Enter move: ";
-    cin >> humanMove;
-    //while (humanMove != 'S' && humanMove != 'R' && humanMove != 'P');
+    std::cout << "Enter move: ";
+    std::cin >> humanMove;
     return humanMove;
 }
 char Human::getMove()
