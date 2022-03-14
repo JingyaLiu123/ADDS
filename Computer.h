@@ -1,18 +1,13 @@
-#ifndef HUMAN_H
-#define HUMAN_H
+#ifndef COMPUTER_H
+#define COMPUTER_H
 #include <iostream>
-using namespace std;
 
-//initate class
-class Human
+class Computer
 {
     public:
-        Human();
-        char makeMove();
+        Computer();
         char getMove();
-
     private:
-        char humanMove;
+        char Move;
 };
-
 #endif
