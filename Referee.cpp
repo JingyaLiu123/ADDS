@@ -1,7 +1,4 @@
 #include "Referee.h"
-#include "Computer.h"
-#include "Human.h"
-#include <iostream>
 
 Referee::Referee()
 {
@@ -21,6 +18,8 @@ char Referee::refGame(Human player1, Computer player2)
     return Result;
 }
 Referee::~Referee(){}
+
+
 
 
 
