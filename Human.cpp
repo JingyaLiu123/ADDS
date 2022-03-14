@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Human.h"
-
 Human::Human()
 {
     humanMove = 'a';
