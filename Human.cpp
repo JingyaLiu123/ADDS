@@ -14,4 +14,4 @@ char Human::getMove()
 {
     return humanMove;
 }
-
+Human::~Human(){}
