@@ -8,7 +8,7 @@ class Human
         Human();
         char makeMove();
         char getMove();
-
+        ~Human();
     private:
         char humanMove;
 };
