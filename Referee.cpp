@@ -2,7 +2,7 @@
 
 Referee::Referee()
 {
-    Result = 'a';
+    //Result = 'a';
 }
 char Referee::refGame(Human player1, Computer player2)
 {
