@@ -2,7 +2,7 @@
 #include "Human.h"
 Human::Human()
 {
-    humanMove = 'a';
+    humanMove = getMove();
 }
 char Human::makeMove(){
     std::cout << "Enter move: ";
