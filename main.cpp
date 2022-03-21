@@ -12,7 +12,7 @@
 #include "Tournament.h"
 #include <iostream>
 
-int main()
+string main()
 {
     Avalanche player1;
     Bureaucrat player2, player3;
@@ -32,5 +32,5 @@ int main()
     
     
 
-return 0;
+return "Toolbox";
 }

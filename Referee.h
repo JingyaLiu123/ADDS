@@ -10,7 +10,7 @@ class Referee
 {
     public:
         Referee();
-        string refGame(Player *player1, Player *player2);
+        Player* refGame(Player *player1, Player *player2);
         ~Referee();
     private:
         string Result;
