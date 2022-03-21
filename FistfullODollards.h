@@ -1,0 +1,4 @@
+#ifndef FISTFULLODOLLARS_H
+#define FISTFULLODOLLARS_H
+
+#endif
