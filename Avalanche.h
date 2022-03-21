@@ -6,12 +6,8 @@ class Avalanche: public Computer
 {
     public:
         Avalanche();
-    /*public:
-        Avalanche();
-        char getMove();
         ~Avalanche();
-    private:
-        char AvMove;*/
+
 };
 
 

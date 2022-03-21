@@ -6,9 +6,10 @@ class Computer
 {
     public:
         Computer();
-        char getMove();
+        virtual char getMove();
         ~Computer();
-    private:
+    //private: CHANGED TO PRIVATE SO MOVE CAN BE INHERITED
+    protected:
         char Move;
 };
 #endif

@@ -3,10 +3,11 @@
 
 Computer::Computer()
 {
-    Move = 'R';
+    //Move = 'R';
 }
 
 char Computer::getMove(){
+    Move = 'R';
     return Move;
 }
 Computer::~Computer(){}

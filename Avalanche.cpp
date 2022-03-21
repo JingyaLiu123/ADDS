@@ -3,3 +3,6 @@
 
 Avalanche::Avalanche()
 {}
+
+Avalanche::~Avalanche(){}
+

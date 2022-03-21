@@ -2,19 +2,13 @@
 #include "Human.h"
 
 Human::Human()
-{
-    //humanMove = makeMove();
-}
+{}
 char Human::makeMove(){
-    while (humanMove != 'S' && humanMove != 'R' && humanMove != 'P'){
+    while (humanMove != 'S' && humanMove != 's' && humanMove != 'r' && humanMove != 'R' && humanMove != 'p' && humanMove != 'P'){
         std::cout << "Enter move: ";
         std::cin >> humanMove;
     }
-
     return humanMove;
 }
-/*char Human::getMove()
-{
-    return humanMove;
-}*/
+
 Human::~Human(){}
