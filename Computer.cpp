@@ -2,9 +2,7 @@
 #include <iostream>
 
 Computer::Computer()
-{
-    //Move = 'R';
-}
+{}
 
 char Computer::getMove(){
     Move = 'R';

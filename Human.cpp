@@ -3,12 +3,12 @@
 
 Human::Human()
 {}
-char Human::makeMove(){
-    while (humanMove != 'S' && humanMove != 's' && humanMove != 'r' && humanMove != 'R' && humanMove != 'p' && humanMove != 'P'){
+char Human::getMove(){
+    while (Move != 'S' && Move != 's' && Move != 'r' && Move != 'R' && Move != 'p' && Move != 'P'){
         std::cout << "Enter move: ";
-        std::cin >> humanMove;
+        std::cin >> Move;
     }
-    return humanMove;
+    return Move;
 }
 
 Human::~Human(){}

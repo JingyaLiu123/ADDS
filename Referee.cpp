@@ -1,20 +1,30 @@
 #include "Referee.h"
+#include "Player.h"
 
 Referee::Referee()
 {}
-char Referee::refGame(Human player1, /*Computer*//*Avalanche*/RandomComputer player2)
+string Referee::refGame(Player *player1, Player *player2)
 {
-    Human_move = player1.makeMove();
-    /*Computer_move*/P2_move = player2.getMove();
-    if (Human_move == /*Computer_move*/ P2_move|| Human_move == 'r'){
-        Result = 'T';
-    } else if (Human_move == 'P' || Human_move == 'p'){
-        Result = 'W';
-    } else if (Human_move == 'S' || Human_move == 's'){
-        Result = 'L';
+    P1_move = player1 -> getMove();
+    P2_move = player2 -> getMove();
+
+    if (P1_move == 'R' || P1_move == 'r'){
+        if(P2_move == 'R'){ Result = "Draw";}
+        else if(P2_move == 'P'){Result = "Winner: P2";}
+        else if(P2_move == 'S'){Result = "Winner: P1";}
     }
-   
+    else if (P1_move == 'P' || P1_move == 'p'){
+        if(P2_move == 'R'){Result = "Winner: P1";}
+        else if (P2_move == 'P'){Result = "Draw";}
+        else if (P2_move == 'S'){Result = "Winner: P2";}
+    } 
+    else if (P1_move == 'S' || P1_move == 's'){
+        if(P2_move == 'R'){Result = "Winner: P2";}
+        else if (P2_move == 'P'){Result = "Winner: P1";}
+        else if (P2_move == 'S'){Result = "Draw";}
+    }
     return Result;
 }
+
 Referee::~Referee(){}
 

@@ -5,7 +5,9 @@ using namespace std;
 Player::Player()
 {}
 
-char Player::getPMove()
-{
-    //PMove = 
+char Player::getMove()
+{ 
+    return Move;
 }
+
+Player::~Player(){};
