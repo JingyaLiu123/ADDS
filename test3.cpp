@@ -1,21 +1,25 @@
 #include "Reverse.h"
-#include <iostream>
-#include <stdlib.h>
-#include <string.h>
 #include <string>
+#include <string.h>
+#include <iostream>
 #include <sstream>
-
+using namespace std;
 
 std::string Reverse::reverseString(std::string letters)
 {
-    std::string revletters;
+    string revletters;
     int n = letters.length();
-    
-    while(n > 0)
+    while(n > 0) 
     {
-        revletters += letters[n-1];
-        return revletters + reverseString(letters.substr(0, n-1));
-        n--;
+        if(n==1){
+            revletters = letters;
+            return revletters;
+        } else {
+            revletters += letters[n-1];
+
+            return revletters + reverseString(letters.substr(0, n-1));
+            n--;
+        }
     }
     return revletters;
 }
@@ -46,3 +50,16 @@ int Reverse::reverseDigits(int value)
 }
 
 
+
+int main()
+{
+    Reverse Stringobj;
+    Reverse Digitobj;
+    cout << Digitobj.reverseDigits(234) << endl;
+    cout << Stringobj.reverseString("Sam is here") <<endl;
+    
+    string a = "Hello";
+    cout << a[a.length()-1] << endl;
+    cout << "hello" << endl;
+    return 0;
+}
