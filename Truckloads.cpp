@@ -5,6 +5,10 @@ int Truckloads::numTrucks(int numCrates, int loadSize)
 {   
     int oddcount;
     int numtruck;
+    if (numCrates < 0 || loadSize < 0){
+        std::cout << "ERROR" << std::endl;
+        return -1;
+    }
     //-----------base case----------------
     if (numCrates <= loadSize){
         return 1;

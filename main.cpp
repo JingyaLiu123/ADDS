@@ -11,7 +11,7 @@ int main(void)
     Reverse Dobj;
     cout << Dobj.reverseDigit(-12345) << endl;  
     Truckloads Tobj;
-    cout << Tobj.numTrucks(1, 1) << endl;
+    cout << Tobj.numTrucks(-1, 1) << endl;
     EfficientTruckloads ETobj;
-    cout << ETobj.numTrucks(2, 1) << endl;
+    cout << ETobj.numEffTrucks(2, 1) << endl;
 }
