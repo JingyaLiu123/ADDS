@@ -7,7 +7,7 @@ class Reverse
     public:
 
     std::string reverseString(std::string letters);
-    int reverseDigits(int value);
+    int reverseDigit(int value);
     std::string letters;
     int value;
 };

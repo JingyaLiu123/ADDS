@@ -1,10 +1,9 @@
-#include "Reverse.h"
 #include <iostream>
 #include <stdlib.h>
 #include <string.h>
 #include <string>
 #include <sstream>
-
+#include "Reverse.h"
 
 std::string Reverse::reverseString(std::string letters)
 {
@@ -13,6 +12,7 @@ std::string Reverse::reverseString(std::string letters)
     
     while(n > 0)
     {
+        if(n == 0) {return "ERROR";}
         revletters += letters[n-1];
         return revletters + reverseString(letters.substr(0, n-1));
         n--;
@@ -20,12 +20,11 @@ std::string Reverse::reverseString(std::string letters)
     return revletters;
 }
 
-int Reverse::reverseDigits(int value)
+int Reverse::reverseDigit(int value)
 {
     if (value < 0) 
     {
-        std::cout << "need non-negative value" << std::endl;
-        return 0;
+        return -1;
     }
     std::string str;
     std::stringstream ss;
