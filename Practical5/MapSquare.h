@@ -1,0 +1,1 @@
+#define MAPSQUARE_H
