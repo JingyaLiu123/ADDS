@@ -1,0 +1,1 @@
+#define MAPTRIPLE_H

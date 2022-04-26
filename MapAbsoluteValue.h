@@ -1,0 +1,1 @@
+#define MAPABSOLUTEVALUE_H

@@ -1,0 +1,1 @@
+#define FILTERGENERIC_H
