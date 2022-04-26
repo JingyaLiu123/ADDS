@@ -4,7 +4,7 @@
 #include <vector>
 #include <map>
 
-class MapSquare
+class MapSquare: public MapGeneric
 {
     public:
         int f(int);

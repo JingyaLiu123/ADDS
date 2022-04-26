@@ -4,7 +4,7 @@
 #include <vector>
 #include <map>
 
-class FillterForTwoPositive
+class FillterForTwoPositive: public FilterGeneric
 {
     public:
         int f(int);

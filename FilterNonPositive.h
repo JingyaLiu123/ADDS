@@ -4,7 +4,7 @@
 #include <vector>
 #include <map>
 
-class FilterNonPositive
+class FilterNonPositive: public FilterGeneric
 {
     public:
         int f(int);

@@ -2,7 +2,7 @@
 #define MAPABSOLUTEVALUE_H
 #include "MapGeneric.h"
 
-class MapAbsoluteValue
+class MapAbsoluteValue: public MapGeneric
 {
     public:
         int f(int);

@@ -1,8 +1,5 @@
 #include "ReduceMinimum.h"
 #include <iostream>
-#include <list>
-#include <map>
-#include <string>
 
 int reducefunc2()
 {

@@ -1,6 +1,6 @@
 #include "ReduceGeneric.h"
 #include <iostream>
-#include <map>
+
 
 int ReduceGeneric::f(int){
     return 0;

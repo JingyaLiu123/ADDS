@@ -1,8 +1,10 @@
 #ifndef REDUCEMINIMUM_H
 #define REDUCEMINIMUM_H
 #include "ReduceGeneric.h"
+#include <map>
+#include <list>
 
-class MapMinimum
+class MapMinimum: public ReduceGeneric
 {
     public:
         int f(int);

@@ -1,8 +1,6 @@
 #include "ReduceGCD.h"
 #include <iostream>
-#include <list>
-#include <map>
-#include <string>
+
 
 int reducefunc1()
 {

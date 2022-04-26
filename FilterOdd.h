@@ -4,7 +4,7 @@
 #include <vector>
 #include <map>
 
-class FilterOdd
+class FilterOdd: public FilterGeneric
 {
     public:
         int f(int);
