@@ -66,7 +66,6 @@ void Individual :: flipBit(int Pos)
         {
             cout << binaryString[i];
         }
-        cout << endl;
     } else if ((char)binaryString[binIndex] == '1')
     {
         binaryString.replace(binIndex, 1, str2);
@@ -74,11 +73,28 @@ void Individual :: flipBit(int Pos)
         {
             cout << binaryString[i];
         }
-        cout << endl;
     } else 
     {
         cout << "value is not 0 or 1" << endl;
     }
 }
 
+int Individual :: getMaxOnes()
+{
+    int counter = 0;
+    for (int i = 0, n = 0; i < (int)binaryString.length(); i++)
+    {
+        if(binaryString[i] == '1')
+        {
+            n ++;
+        } else {
+            if(n > counter)
+            {
+                counter = n;
+            }
+            n = 0;
+        }
+    }
+    return counter;
+}
 Individual :: ~Individual() {}
