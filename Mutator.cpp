@@ -1,6 +1,5 @@
 #include "Mutator.h"
 
-Individual Mutator :: mutate(Individual *obj1, int k) 
-{
-    return *obj1;
+Individual Mutator::mutate(Individual *parent, int k) {
+    return *parent;
 }

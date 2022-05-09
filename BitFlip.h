@@ -1,15 +1,11 @@
-#ifndef BITFLIP_H
-#define BITFLIP_H
+#ifndef ADDS_PRAC6_BITFLIP_H
+#define ADDS_PRAC6_BITFLIP_H
+#include "Individual.h"
 #include "Mutator.h"
-#include <iostream>
-using namespace std;
 
-class BitFlip : public Mutator 
-{
-    public:
-        BitFlip();
-        Individual mutate(Individual *obj1, int k);
-        ~BitFlip();
+class BitFlip : public Mutator {
+    Individual mutate(Individual *parent, int k);
 };
+
 
 #endif 

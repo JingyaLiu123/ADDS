@@ -1,15 +1,13 @@
-#ifndef REARRANGE_H
-#define REARRANGE_H
+#ifndef ADDS_PRAC6_REARRANGE_H
+#define ADDS_PRAC6_REARRANGE_H
 #include "Mutator.h"
-#include <iostream>
-using namespace std;
 
-class Rearrange : public Mutator
-{
-    public:
-        Individual mutate(Individual *obj1, int k);
-        Rearrange();
-        ~Rearrange();
+class Rearrange :public Mutator{
+public:
+//    std::string binaryString;
+//    Rearrange(std::string dnsString);
+    Individual mutate(Individual *parent, int k);
 };
 
-#endif 
+
+#endif

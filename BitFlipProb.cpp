@@ -1,25 +1,17 @@
 #include "BitFlipProb.h"
+BitFlipProb::BitFlipProb(double p) {
+    this->probability = p;
+}
 
-Individual BitFlipProb :: mutate(Individual *obj1, int k)
-{
-    int len = obj1 -> getLength();
-    for (int i = 0; i < len; i++){
-        if(probability < 0){
-            cout << "probability out of bounds" << endl;
-        } else if (probability < 0.5){
-            obj1 -> getString();  
-        } else if (probability >= 0.5) {
-            obj1 -> flipBit(i);
-        } else if (probability > 1) {
-            cout << "probability out of bounds" << endl;
-        }
-        
+Individual BitFlipProb::mutate(Individual *parent, int k) {
+    // not sure how to play with the possibility p
+    // leave it out for now
+    // & flip every bit of the dna string
+    for(int i = 0; i < parent->getLength(); i++){
+        // goes through every bit of the binaryString
+        // & flips each bit with probability p
+        parent->flipBit(i + 1);
     }
-    return *obj1;
-}
 
-BitFlipProb :: BitFlipProb(double p) 
-{
-    this -> probability = p;
+    return *parent;
 }
-BitFlipProb :: ~BitFlipProb() {}

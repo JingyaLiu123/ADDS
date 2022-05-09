@@ -1,13 +1,11 @@
-#ifndef MUTATOR_H
-#define MUTATOR_H
+#ifndef ADDS_PRAC6_MUTATOR_H
+#define ADDS_PRAC6_MUTATOR_H
 #include "Individual.h"
-#include <iostream>
-using namespace std;
 
-class Mutator 
-{
-    public:
-        virtual Individual mutate(Individual *obj1, int k);
+class Mutator {
+public:
+    virtual Individual mutate(Individual *parent, int k);
 };
+
 
 #endif 

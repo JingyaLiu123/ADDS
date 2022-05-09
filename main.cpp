@@ -1,17 +1,105 @@
+#include <iostream>
+#include <string>
 #include "Individual.h"
 #include "Mutator.h"
 #include "BitFlip.h"
 #include "BitFlipProb.h"
 #include "Rearrange.h"
-#include <iostream>
 
-Individual * execute(Individual * indPtr, Mutator * mPtr, int k)
-{
-    mPtr -> mutate(indPtr, k);
+#include "RandomBinaryString.h"
+
+#define MAX_GENERATIONS 4   // how many rounds of mutations can occur
+#define MAX_DNA_LENGTH  8   // the max string length for binaryString
+#define MIN_DNA_LENGTH  4
+#define MAX_MUTATORS    3   // max number of mutators
+#define MAX_K_LENGTH    9   // max number value for k param in functions
+
+RandomBinaryString *randomGenerator = new RandomBinaryString();
+
+Individual* execute(Individual *indPtr, Mutator* mPtr, int k){
+    mPtr->mutate(indPtr, k);
     return indPtr;
 }
 
+// dummy debug function
+int check_cmdline_params(int argc, char *argv[]){
+//    std::cout << "argc = " << argc << std::endl;
+//    for(int i = 0; i < argc; i++){
+//       std::cout << "argv[" << i << "] = " << argv[i] << std::endl;
+//    }
+    if(argc != 5){
+//        std::cout << "wrong params given" << std::endl;
+//        return argc;
+        return -1;
+    }
+    return 0;
+}
+
+void testFunc(){
+    int len = randomGenerator->getRandomNumber(MAX_DNA_LENGTH - MIN_DNA_LENGTH) + MIN_DNA_LENGTH; // range [MIN_DNA_LENGTH, MAX_DNA_LENGTH]
+    std::string dnaStr = randomGenerator->generateString(len);
+    auto *indTest1 = new Individual(dnaStr);
+
+    // output DNA string
+    std::cout << "Before mutating:  | DNA len = " << len << " | ";
+    //std::cout << indTest1->getString_4Bytes() << " | ";
+    std::cout << "Max Ones = " << indTest1->getMaxOnes() << std::endl;
+
+    int rounds = randomGenerator->getRandomNumber(MAX_GENERATIONS) + 1;
+    for(int round = 0; round < rounds; round++) {
+        int k_param = randomGenerator->getRandomNumber(MAX_K_LENGTH) + 1;
+
+        Mutator *mutOption = nullptr;
+        int mutator_choice = randomGenerator->getRandomNumber(MAX_MUTATORS);
+        switch (mutator_choice) {
+            case 0:{
+                std::cout << "OPT = BitFlip     | ";
+                mutOption = new BitFlip();
+                break;
+            }
+            case 1:{
+                // possibility = randomGenerator->getRandomNumber(100) / 100
+                std::cout << "OPT = BitFlipProb | ";
+                mutOption = new BitFlipProb(randomGenerator->getRandomNumber(100) / 100);
+                break;
+            }
+            case 2:{
+                std::cout << "OPT = Reaarange   | ";
+                mutOption = new Rearrange();
+                break;
+            }
+            default:
+                mutOption = new BitFlip();
+        }
+
+        std::cout << "k param = " << k_param << " | ";
+        execute(indTest1, mutOption, k_param);
+        //std::cout << indTest1->getString_4Bytes() << " | ";
+//        std::cout << "k param = " << k_param << " | ";
+        std::cout << "Max Ones = " << indTest1->getMaxOnes() << std::endl;
+    }
+    // output DNA string
+//    std::cout << "After round: " << rounds << " | " << indTest1->getString_4Bytes();
+    return;
+}
+
 int main(int argc, char* argv[]) {
+
+    // debug
+    // run test function when no commandline params given
+    if(argc == 1){
+        testFunc();
+        return 0;
+    }
+
+    // debug
+    // perform commandline error checking
+    // dummy function
+    if(check_cmdline_params(argc, argv) == -1){
+        // if commandline params not in correct format
+        // then exit program
+        return -1;
+    }
 
     // with commandline params
     // commandline params assumed to be in the correct format
@@ -40,38 +128,3 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
-
-// int main(int argc, char* argv[])
-// {
-//     Individual *t = new Individual (16);
-//     t -> binaryString = "0011001010101000";
-//     cout << endl;
-//     cout << "getBit: " << t -> getBit(11) << endl;
-//     cout << "getLength: " << t -> getLength() << endl;
-//     cout << "getString: " << t -> getString() << endl;
-//     cout << "flipBit:   ";
-//     t -> flipBit(10);
-//     cout << endl;
-//     cout << "getmax1s: " << t -> getMaxOnes() << endl;
-// cout << "--------------------------" << endl;
-//     Individual t1("1001111110011001");
-//     cout << endl;
-//     cout << "getBit: " << t1.getBit(12) << endl;
-//     cout << "getLength: " << t1.getLength() << endl;
-//     cout << "getString: " << t1.getString() << endl;
-//     cout << "flipBit:   ";
-//     t1.flipBit(10);
-//     cout << endl;
-//     cout << "getmax1s: " << t1.getMaxOnes() << endl;
-// cout << "-------------------------" << endl;
-//     Mutator *M = new Mutator;
-//     execute(t, M, 1);
-//     BitFlip B;
-//     B.mutate(t, 1);
-//     cout << endl;
-//     BitFlipProb BFP(2);
-//     BFP.mutate(t, 1);
-//     cout << endl;
-//     Rearrange R;
-//     R.mutate(t, 1);
-// }

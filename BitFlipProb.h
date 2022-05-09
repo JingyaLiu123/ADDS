@@ -1,16 +1,15 @@
-#ifndef BITFLIPPROB_H
-#define BITFLIPPROB_H
-#include "Mutator.h"
-#include <iostream>
-using namespace std;
+#ifndef ADDS_PRAC6_BITFLIPPROB_H
+#define ADDS_PRAC6_BITFLIPPROB_H
 
-class BitFlipProb : public Mutator
-{
-    public:
-        BitFlipProb(double p);
-        Individual mutate(Individual *obj1, int k);
-        double probability;
-        ~BitFlipProb();
+#include "Mutator.h"
+
+class BitFlipProb : public Mutator{
+private:
+    double probability;
+public:
+    explicit BitFlipProb(double p);
+    Individual mutate(Individual *parent, int k);
 };
+
 
 #endif

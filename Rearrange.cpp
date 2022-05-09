@@ -1,27 +1,29 @@
+#include <iostream>
 #include "Rearrange.h"
 
-Individual Rearrange :: mutate(Individual *obj1, int k)
-{
-    int len = obj1 -> getLength();
-    int re_pos;
-    if (k > len){
-        k = k%len;
-        re_pos = k - 1;
-    } else {
-        re_pos = k - 1;
-    }
-    string str1, str2;
-    for (int i = 0; i < re_pos - 1; i++){
-        str1 =+ obj1 -> binaryString[i];
-    } 
-    for (int i = re_pos - 1; i < len; i++){
-        str2 =+ obj1 -> binaryString[i];
+Individual Rearrange::mutate(Individual *parent, int k) {
+    int dna_len = parent->getLength();
+    int pos = (k > dna_len ? k % dna_len : k);
+
+    // check boundary conditions
+    if(pos == 0){
+        // here pos must >= 1
+        pos = dna_len;
     }
 
-    obj1 -> binaryString = str2 + str1;
-    
-    return *obj1;
+    // move the binaryString from the pos til the end to the beginning
+    std::string str_1;
+    for(int i = 0; i < pos - 1; i++){
+        str_1 += parent->binaryString[i];
+    }
+    std::string str_2;
+    for(int i = pos - 1; i < parent->getLength(); i++){
+        str_2 += parent->binaryString[i];
+    }
+
+//    std::cout << "DNA before rearrange:" << std::endl << parent->binaryString << std::endl;
+    parent->binaryString = str_2 + str_1;
+//    std::cout << "DNA after rearrange:" << std::endl << parent->binaryString << std::endl;
+
+    return *parent;
 }
-
-Rearrange :: Rearrange() {}
-Rearrange :: ~Rearrange() {}

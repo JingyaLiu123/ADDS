@@ -1,21 +1,21 @@
-#ifndef INDIVIDUAL_H
-#define INDIVIDUAL_H
+#ifndef ADDS_PRAC6_INDIVIDUAL_H
+#define ADDS_PRAC6_INDIVIDUAL_H
 #include <string>
-using namespace std;
 
-class Individual
-{
-    public:
-        Individual();
-        Individual(int a); 
-        Individual(string b);
-        string binaryString;
-        string getString();
-        int getBit(int Pos);
-        void flipBit(int Pos);
-        int getMaxOnes();
-        int getLength();
-        ~Individual();
+class Individual {
+public:
+    std::string binaryString;
 
+    explicit Individual(int len);
+    explicit Individual(std::string dnaString);
+
+    std::string getString();
+    //std::string getString_4Bytes();
+    int getBit(int pos);
+    void flipBit(int pos);
+    int getMaxOnes();
+    int getLength();
 };
+
+
 #endif
