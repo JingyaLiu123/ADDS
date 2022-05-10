@@ -97,4 +97,4 @@ int Individual :: getMaxOnes()
     }
     return counter;
 }
-Individual :: ~Individual() {}
+//Individual :: ~Individual() {}

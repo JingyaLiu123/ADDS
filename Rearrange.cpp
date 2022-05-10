@@ -11,11 +11,11 @@ Individual Rearrange :: mutate(Individual *obj1, int k)
         re_pos = k - 1;
     }
     string str1, str2;
-    for (int i = 0; i < re_pos - 1; i++){
-        str1 =+ obj1 -> binaryString[i];
+    for (int i = 0; i < re_pos; i++){
+        str1 += obj1 -> binaryString[i];
     } 
-    for (int i = re_pos - 1; i < len; i++){
-        str2 =+ obj1 -> binaryString[i];
+    for (int i = re_pos; i < len; i++){
+        str2 += obj1 -> binaryString[i];
     }
 
     obj1 -> binaryString = str2 + str1;

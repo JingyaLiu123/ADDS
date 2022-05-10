@@ -4,7 +4,7 @@ Individual BitFlip :: mutate(Individual *obj1, int k)
 {
     int len = obj1 -> getLength();
     int flip_pos;
-    if (k > len){
+    if (k > len){ //consider if k%len == 0
         k = k%len;
         flip_pos = k - 1;
     } else {
