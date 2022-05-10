@@ -14,5 +14,5 @@ Individual BitFlip :: mutate(Individual *obj1, int k)
     return *obj1;
 }
 
-BitFlip :: BitFlip() {}
-BitFlip :: ~BitFlip() {}
+// BitFlip :: BitFlip() {}
+// BitFlip :: ~BitFlip() {}

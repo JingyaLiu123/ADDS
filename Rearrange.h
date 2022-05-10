@@ -8,8 +8,8 @@ class Rearrange : public Mutator
 {
     public:
         Individual mutate(Individual *obj1, int k);
-        Rearrange();
-        ~Rearrange();
+//         Rearrange();
+//         ~Rearrange();
 };
 
 #endif 

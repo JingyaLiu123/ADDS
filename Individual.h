@@ -6,16 +6,16 @@ using namespace std;
 class Individual
 {
     public:
-        Individual();
+        //Individual();
         Individual(int a); 
-        Individual(string b);
+        Individual(string b); //should have constructor
         string binaryString;
         string getString();
         int getBit(int Pos);
         void flipBit(int Pos);
         int getMaxOnes();
         int getLength();
-        ~Individual();
+        //~Individual(); //have constructors only for parameterised funcs 
 
 };
 #endif

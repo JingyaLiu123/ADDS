@@ -1,7 +1,7 @@
 #include "individual.h"
 #include <iostream>
 
-Individual :: Individual() {cout << "I'm an Individual object" << endl;}
+//Individual :: Individual() {cout << "I'm an Individual object" << endl;}
 
 Individual :: Individual(int a)
 {

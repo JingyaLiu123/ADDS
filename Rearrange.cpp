@@ -23,5 +23,5 @@ Individual Rearrange :: mutate(Individual *obj1, int k)
     return *obj1;
 }
 
-Rearrange :: Rearrange() {}
-Rearrange :: ~Rearrange() {}
+// Rearrange :: Rearrange() {}
+// Rearrange :: ~Rearrange() {}
