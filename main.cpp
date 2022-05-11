@@ -26,6 +26,7 @@ int main(int argc, char* argv[]) {
     cin >> k2;
 
     Individual *mutated(0);
+    //Individual *mutated1(0);
 
     Individual *ind1 = new Individual(binarystr1);
     BitFlip *bf = new BitFlip();
@@ -36,10 +37,14 @@ int main(int argc, char* argv[]) {
     Individual *ind2 = new Individual(binarystr2);
     Rearrange *ra = new Rearrange();
     mutated = execute(ind2, ra, k2);
+    //mutated1 = execute(ind2, ra, k2);
     std::string mutated_str2 = mutated->getString();
+    //int max2 = mutated1->getMaxOnes();
     int max2 = mutated->getMaxOnes();
 
-    std::cout << mutated_str1 << ' ' << mutated_str2 << ' ' << std::max(max1, max2) << std::endl;
+    //std::cout << mutated_str1 << ' ' << mutated_str2 << ' ' << std::max(max1, max2) << std::endl;
+    std::cout << mutated_str1 << ' ' << mutated_str2 << ' ' << max2 << std::endl;
+    
 
 
     return 0;
