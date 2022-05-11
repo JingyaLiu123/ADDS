@@ -7,7 +7,7 @@ using namespace std;
 class Mutator 
 {
     public:
-        virtual Individual mutate(Individual *obj1, int k);
+        virtual Individual mutate(Individual *obj1, int k) = 0;
 };
 
 #endif 
