@@ -1,7 +1,7 @@
-#include "Individual.h"
+// #include "Individual.h"
 #include "Mutator.h"
 #include "BitFlip.h"
-#include "BitFlipProb.h"
+// #include "BitFlipProb.h"
 #include "Rearrange.h"
 #include <iostream>
 
@@ -16,12 +16,16 @@ int main(int argc, char* argv[]) {
     // with commandline params
     // commandline params assumed to be in the correct format
     // no error checking performed
-    std::string binarystr1 = argv[1];
-    std::string binarystr2 = argv[3];
-    int k1 = std::stoi(argv[2]);
-    int k2 = std::stoi(argv[4]);
+    std::string binarystr1;
+    cin >> binarystr1;
+    int k1 = 0;
+    cin >> k1;
+    std::string binarystr2;
+    cin >> binarystr2;
+    int k2;
+    cin >> k2;
 
-    Individual *mutated;
+    Individual *mutated(0);
 
     Individual *ind1 = new Individual(binarystr1);
     BitFlip *bf = new BitFlip();

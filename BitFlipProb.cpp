@@ -22,4 +22,4 @@ BitFlipProb :: BitFlipProb(double p)
 {
     this -> probability = p;
 }
-BitFlipProb :: ~BitFlipProb() {}
+// BitFlipProb :: ~BitFlipProb() {}
