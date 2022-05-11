@@ -82,16 +82,20 @@ int Individual :: getMaxOnes()
     int counter = 0;
     for (int i = 0, n = 0; i < (int)binaryString.length(); i++)
     {
-        if(binaryString[i] == '1')
-        {
+        // if(this -> binaryString[i] == '1')
+        // {
+        //     n ++;
+        // } else {
+        //     if(n > counter)
+        //         counter = n;
+        //     n = 0;
+        // }
+    if(this -> binaryString[i] == '1')
             n ++;
-        } else {
-            if(n > counter)
-            {
-                counter = n;
-            }
+    if(n > counter)
+            counter = n;
+    if(this -> binaryString[i] == '0')
             n = 0;
-        }
     }
     return counter;
 }
