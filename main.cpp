@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <bits/stdc++.h>
 using namespace std;
 
 bool isOperator(char x) {
@@ -15,7 +16,10 @@ bool isOperator(char x) {
 
 bool OperatorOperandNum(int opratr, int oprnd)
 {
-    if (oprnd == opratr + 1) {return true;} else {return false;}
+    if (oprnd == opratr + 1) {return true;} 
+    else if (oprnd == 1 && opratr == 1) {return false;}
+    else {return false;}
+
 }
 
 bool is0To99(int y)
@@ -41,8 +45,11 @@ string preToInfix(string pre_exp) {
 
       string op1 = s.top();   s.pop();
       string op2 = s.top();   s.pop();
- 
-      string temp = "(" + op1 + pre_exp[i] + op2 + ")";
+      string temp = "";
+    if (i == 0 || pre_exp[i] == '*' || pre_exp[i] == '/') 
+    { temp =  op1 + " " + pre_exp[i] + " " + op2;}
+    else { temp = "(" + op1 + " " + pre_exp[i] + " " + op2 + ")";}
+      //string temp = "(" + op1 + pre_exp[i] + op2 + ")";
       s.push(temp);
     }
     else {
@@ -64,6 +71,43 @@ string preToInfix(string pre_exp) {
     return s.top();
 }
 
+// Evaluating prefix expression.
+bool isOperand(char c)
+{
+    return isdigit(c);
+}
+ 
+double evaluatePrefix(string exprsn)
+{
+    stack<double> Stack;
+ 
+    for (int j = exprsn.size() - 1; j >= 0; j--) {
+        if (isOperand(exprsn[j]))
+            Stack.push(exprsn[j] - '0');
+        else {
+            double o1 = Stack.top();
+            Stack.pop();
+            double o2 = Stack.top();
+            Stack.pop();
+                switch (exprsn[j]) {
+                case '+':
+                    Stack.push(o1 + o2);
+                    break;
+                case '-':
+                    Stack.push(o1 - o2);
+                    break;
+                case '*':
+                    Stack.push(o1 * o2);
+                    break;
+                case '/':
+                    Stack.push(o1 / o2);
+                    break; }
+        }
+    }
+ 
+    return Stack.top();
+}
+
 int main(void)
 {
     string input;
@@ -75,5 +119,8 @@ int main(void)
         if(final_input.empty()){final_input = temp_input;} 
         else {final_input = final_input + temp_input;}
 }
-    cout << preToInfix(final_input);   
+    if (preToInfix(final_input) != "ERROR")
+        {cout << preToInfix(final_input) << " = " << evaluatePrefix(final_input);}
+    else 
+        {cout << preToInfix(final_input);} 
 }
